@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zd4_Shaidullin.MainPage"
+            BackgroundColor="White">
+
+    <ContentPage Title="Кредитный&#x0a;калькулятор">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Сумма кредита:" 
+                   Grid.Column="0" 
+                   Grid.Row="0"
+                   VerticalOptions="Start" 
+                   FontSize="20"
+                   Margin="10,9,0,0"/>
+            <Entry x:Name="sumCreditEntry"
+                   Grid.Column="1" 
+                   Grid.Row="0"
+                   VerticalOptions="Start"
+                   FontSize="17"
+                   Margin="-30,0,25,0"/>
+
+            <Label Text="Срок (месяцев):" 
+                   Grid.Column="0" 
+                   Grid.Row="1"
+                   VerticalOptions="Start" 
+                   FontSize="20"
+                   Margin="10,9,0,0"/>
+            <Entry x:Name="termMounthEntry"
+                   Grid.Column="1" 
+                   Grid.Row="1"
+                   VerticalOptions="Start"
+                   FontSize="17"
+                   Margin="-30,0,25,0"/>
+
+            <Label Text="Вид&#x0a;платежа:" 
+                   Grid.Column="0" 
+                   Grid.Row="2"
+                   VerticalOptions="Start" 
+                   FontSize="20"
+                   Margin="10,9,0,0"/>
+            <Picker x:Name="typeOfPaymentPicker"
+                    Grid.Column="1" 
+                    Grid.Row="2"
+                    FontSize="17"
+                    VerticalOptions="Center"
+                    Title="Выберите тип"
+                    Margin="-30,0,25,0"/>
+
+            <Label Text="Процентная&#x0a;ставка:"
+                   Grid.Column="0"
+                   Grid.Row="3"
+                   VerticalOptions="Start"
+                   FontSize="20"
+                   Margin="10,9,0,0"
+                   Grid.ColumnSpan="2"/>
+            <Slider x:Name="interestRateSlider"
+                    Grid.Column="0"
+                    Grid.Row="4"
+                    VerticalOptions="Start"
+                    Margin="5,0,15,0" 
+                    Grid.ColumnSpan="2"
+                    ValueChanged="InterestRateSlider_ValueChanged"
+                    Maximum="100"
+                    Minimum="1"
+                    ThumbColor="Blue"
+                    BackgroundColor="DeepSkyBlue"/>
+
+            <Label x:Name="percentLabel"
+                   Text="1%"
+                   Grid.Column="0"
+                   Grid.Row="5"
+                   HorizontalOptions="Center"
+                   FontSize="20"
+                   Margin="10,9,0,0"
+                   Grid.ColumnSpan="2"/>
+
+            <Label Text="Ежемесячный платеж:"
+                   Grid.Column="0"
+                   Grid.Row="6"
+                   VerticalOptions="Start"
+                   FontSize="20"
+                   Margin="10,15,0,0" />
+            <Label x:Name="monthlyPaymentLabel"
+                   Text="..."
+                   Grid.Column="1"
+                   Grid.Row="6"
+                   VerticalOptions="Start"
+                   FontSize="20"
+                   Margin="10,15,0,0" />
+
+            <Label Text="Общая сумма:"
+                   Grid.Column="0"
+                   Grid.Row="7"
+                   VerticalOptions="Start"
+                   FontSize="20"
+                   Margin="10,9,0,0"/>
+            <Label x:Name="totalAmountLabel"
+                   Text="..."
+                   Grid.Column="1"
+                   Grid.Row="7"
+                   VerticalOptions="Start"
+                   FontSize="20"
+                   Margin="10,9,0,0"/>
+
+            <Label Text="Переплата:"
+                   Grid.Column="0"
+                   Grid.Row="8"
+                   VerticalOptions="Start"
+                   FontSize="20"
+                   Margin="10,9,0,0"/>
+            <Label x:Name="overpaymentLabel"
+                   Text="..."
+                   Grid.Column="1"
+                   Grid.Row="8"
+                   VerticalOptions="Start"
+                   FontSize="20"
+                   Margin="10,9,0,0"/>
+
+            <Button Text="Рассчитать"
+                    Grid.Column="0"
+                    Grid.Row="9"
+                    Grid.ColumnSpan="2"
+                    HorizontalOptions="Center"
+                    Clicked="CalculateButton_Clicked" />
+        </Grid>
+
+
+    </ContentPage>
+
+    <!-- Содержимое второй вкладки -->
+    <ContentPage Title="Курсы&#x0a;валют">
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="Центробанк РФ:" 
+                   Grid.Column="0" 
+                   Grid.Row="0"
+                   VerticalOptions="Start" 
+                   FontSize="20"
+                   Margin="10,9,0,0"
+                   Grid.ColumnSpan="2"/>
+
+            <Label Text="USD" 
+                   Grid.Column="0" 
+                   Grid.Row="1"
+                   VerticalOptions="Start" 
+                   FontSize="20"
+                   Margin="10,0,0,0"
+                   Grid.ColumnSpan="1"
+                   TextDecorations="Underline"
+                   FontAttributes="Bold"
+                   />
+            <Label Text="80.000" 
+                   Grid.Column="1" 
+                   Grid.Row="1"
+                   VerticalOptions="Start" 
+                   FontSize="20"
+                   Margin="10,0,0,0"/>
+
+            <Label Text="EUR" 
+                   Grid.Column="0" 
+                   Grid.Row="2"
+                   VerticalOptions="Start" 
+                   FontSize="20"
+                   Margin="10,10,0,0"
+                   TextDecorations="Underline"
+                   FontAttributes="Bold"/>
+            <Label Text="86.000" 
+                   Grid.Column="1" 
+                   Grid.Row="2"
+                   VerticalOptions="Start" 
+                   FontSize="20"
+                   Margin="10,10,0,0"/>
+
+            <Label Text="Текущая&#x0a;дата:" 
+                   Grid.Column="2" 
+                   Grid.Row="0"
+                   VerticalOptions="Start" 
+                   FontSize="20"
+                   Margin="10,9,0,0"
+                   TextDecorations="Underline"
+                   FontAttributes="Bold"/>
+
+            <DatePicker x:Name="nowDatePicker"
+                        Grid.Column="2" 
+                        Grid.Row="1"
+                        VerticalOptions="Start" 
+                        FontSize="20"
+                        Margin="10,9,65,0" 
+                        FontAttributes="Bold"
+                        Grid.RowSpan="2" />
+
+        </Grid>
+
+    </ContentPage>
+
+</TabbedPage>
