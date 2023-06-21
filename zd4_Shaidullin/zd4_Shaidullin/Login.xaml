@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="zd4_Shaidullin.Login">
+    <ContentPage.Resources>
+        <StyleSheet Source="/style.css" />
+    </ContentPage.Resources>
+
+    <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+        <StackLayout
+               Orientation="Horizontal" HorizontalOptions="Center">
+
+            <Label
+                   x:Name="welc" 
+                      Text="Welcome"
+                   FontSize="20"
+                   Margin="0,150,0,0"
+                   StyleClass="welclabel">
+            </Label>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Entry   
+                   x:Name="login" 
+                   Margin="0,30,0,0"
+                   FontSize="20"
+                   Placeholder="Username"
+                   StyleClass="logpass"
+                    WidthRequest="300">
+            </Entry>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Entry
+                   x:Name="pass" 
+                   FontSize="20"
+                   IsPassword="True"
+                   Placeholder="Password"
+                   StyleClass="logpass"
+                    WidthRequest="300">
+
+            </Entry>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <Button 
+                   x:Name="signin"
+                   Text="Sign In"
+                   Clicked="signin_Clicked"
+                   StyleClass="button"
+            
+                    WidthRequest="300"
+                   Margin="30"
+                   
+                   >
+
+            </Button>
+
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+            <CheckBox 
+                   x:Name="checkbox"  HorizontalOptions="Center"
+                   StyleClass="checkbox">
+            </CheckBox>
+            <Label
+                   Text="Remember Me" HorizontalOptions="Center"
+                   StyleClass="label"
+                   FontSize="15"
+                   Margin="5">
+
+            </Label>
+            <Label
+                   Text="I Forgot!"
+                   Margin="30,5,30,0"
+                   StyleClass="labelIforgot"
+                   FontSize="15"
+                   >
+            </Label>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

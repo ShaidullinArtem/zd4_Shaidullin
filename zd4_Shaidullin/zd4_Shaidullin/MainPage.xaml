@@ -4,6 +4,10 @@
              x:Class="zd4_Shaidullin.MainPage"
             BackgroundColor="White">
 
+    <TabbedPage.Resources>
+        <StyleSheet Source="/style.css" />
+    </TabbedPage.Resources>
+
     <ContentPage Title="Кредитный&#x0a;калькулятор">
 
         <Grid>
@@ -36,6 +40,7 @@
                    Grid.Row="0"
                    VerticalOptions="Start"
                    FontSize="17"
+                   StyleClass="logpass"
                    Margin="-30,0,25,0"/>
 
             <Label Text="Срок (месяцев):" 
@@ -43,6 +48,7 @@
                    Grid.Row="1"
                    VerticalOptions="Start" 
                    FontSize="20"
+                   StyleClass="logpass"
                    Margin="10,9,0,0"/>
             <Entry x:Name="termMounthEntry"
                    Grid.Column="1" 
@@ -81,7 +87,7 @@
                     ValueChanged="InterestRateSlider_ValueChanged"
                     Maximum="100"
                     Minimum="1"
-                    ThumbColor="Blue"
+                    ThumbColor="Red"
                     BackgroundColor="DeepSkyBlue"/>
 
             <Label x:Name="percentLabel"

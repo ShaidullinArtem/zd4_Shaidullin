@@ -1,0 +1,34 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    background-color: #2F2F2F;
+    font-style: bold;
+    color: white;
+}
+
+
+.logpass {
+    color: black;
+    background-color: #f3f3f3;
+}
+
+button {
+    background-color: red;
+}
+
+.checkbox {
+    color: white;
+}
+
+label {
+    font-size: small;
+}
+
+
+.labelIforgot {
+    text-decoration: underline;
+    color: white;
+}
+

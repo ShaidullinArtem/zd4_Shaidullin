@@ -13,7 +13,7 @@ namespace zd4_Shaidullin
 
         double value;
 
-        public MainPage()
+        public MainPage(string login, string pass)
         {
             InitializeComponent();
 
